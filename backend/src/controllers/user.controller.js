@@ -39,4 +39,13 @@ const createUserProfile = async (req, res) => {
   }
 };
 
-module.exports = {createUserProfile}
+const getUser = async (req, res) => {
+    try {
+        const users = await UserProfile.find();
+        res.status(200).json(users);
+    } catch (err) {
+        res.status(500).json({ message: "Error fetching books", error: err.message });
+    }
+};
+
+module.exports = {createUserProfile, getUser}
