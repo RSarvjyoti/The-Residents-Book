@@ -10,8 +10,8 @@ const createUserProfile = async (req, res) => {
         .json({ message: "First name, Last name, and Role are required." });
     }
 
-    let photoUrl = "";
-    if (req.file) {
+     let photoUrl = "https://img.freepik.com/premium-photo/user-icon-person-symbol-human-avatar-3d-render_473931-217.jpg?w=740"; 
+    if (req.file && req.file.path) {
       photoUrl = req.file.path;
     }
 

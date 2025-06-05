@@ -12,18 +12,10 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary,
   params: async (req, file) => {
-    let folder = "uploads"; 
-    let format = "auto"; 
-
-    if (file.fieldname === "photo") {
-      folder = "user_photos";
-      format = "png";
-    }
-
     return {
-      folder,
-      format,
-      resource_type: "auto",
+      folder: "user_photos",
+      format: "png", 
+      resource_type: "image",
     };
   },
 });
