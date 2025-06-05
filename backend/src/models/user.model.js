@@ -19,7 +19,6 @@ const userProfileSchema = new mongoose.Schema({
   photo: {
     type: String, 
     default : "https://img.freepik.com/premium-photo/user-icon-person-symbol-human-avatar-3d-render_473931-217.jpg?w=740",
-    trim: true
   },
   linkedin: {
     type: String,
